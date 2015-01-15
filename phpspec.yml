@@ -1,0 +1,4 @@
+suites:
+    bloom_suite:
+        namespace: maxwilms\BloomFilter
+        psr4_prefix: maxwilms\BloomFilter

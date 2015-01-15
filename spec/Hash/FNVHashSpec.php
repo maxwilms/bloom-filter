@@ -1,0 +1,22 @@
+<?php
+
+namespace spec\maxwilms\BloomFilter\Hash;
+
+use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
+
+class FNVHashSpec extends ObjectBehavior
+{
+    function it_is_initializable()
+    {
+        $this->shouldHaveType('maxwilms\BloomFilter\Hash\FNVHash');
+    }
+
+    function it_hashes_strings()
+    {
+        $this->hash('')->shouldReturn(84696351);
+        $this->hash('come')->shouldReturn(465447013);
+        $this->hash('get')->shouldReturn(646770804);
+        $this->hash('give')->shouldReturn(1103452261);
+    }
+}
