@@ -10,7 +10,7 @@ It will always confirm if the element is member of the set. But false-positives 
 When to use Bloom filters
 -------------------------
 
-Use this data structure when you quickly need to confirm that a certain values does not exists in a large data set.
+Use this data structure when you quickly need to confirm that a certain value does not exists in a large data set.
 For example a certain row is not present on your database (e.g., IP address, username, email).
 
 Installation
@@ -28,7 +28,7 @@ Now you are ready to use it!
 Usage
 -----
 
-~~~
+```php
 <?php
 
 require_once('vendor/autoload.php');
@@ -45,7 +45,7 @@ $bloomFilter->add('bar');
 $bloomFilter->contains('foo'); // true - possibly in set
 $bloomFilter->contains('baz'); // false - definitely not in set
 
-~~~
+```
 
 TODO
 ----
