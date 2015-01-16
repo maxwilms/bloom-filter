@@ -7,7 +7,7 @@ class BitField
 
     protected $length;
 
-    protected $field;
+    protected $data;
 
     public function __construct($length)
     {

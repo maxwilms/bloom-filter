@@ -9,6 +9,10 @@ class MultiHash
 
     protected $hashTwo;
 
+    protected $upperBound;
+
+    protected $hashCount;
+
     public function __construct(Hash $hashOne, Hash $hashTwo)
     {
         $this->hashOne = $hashOne;
