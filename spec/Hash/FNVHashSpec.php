@@ -15,8 +15,8 @@ class FNVHashSpec extends ObjectBehavior
     function it_hashes_strings()
     {
         $this->hash('')->shouldReturn(84696351);
-        $this->hash('come')->shouldReturn(465447013);
-        $this->hash('get')->shouldReturn(646770804);
-        $this->hash('give')->shouldReturn(1103452261);
+        $this->hash('come')->shouldReturn(3670383649);
+        $this->hash('get')->shouldReturn(646772355);
+        $this->hash('give')->shouldReturn(818645658);
     }
 }
