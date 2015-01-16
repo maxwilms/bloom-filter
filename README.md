@@ -2,6 +2,7 @@ PHP Bloom filter
 ================
 
 [![Build Status](https://travis-ci.org/maxwilms/bloom-filter.svg?branch=master)](https://travis-ci.org/maxwilms/bloom-filter)
+[![Quality Score](https://scrutinizer-ci.com/g/maxwilms/bloom-filter/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/maxwilms/bloom-filter/)
 
 A [Bloom filter](https://en.wikipedia.org/wiki/Bloom_filter) is a probabilistic data structure, that tests whether an element is member of a set. 
 It will always confirm if the element is member of the set. But false-positives are possible.
