@@ -1,6 +1,6 @@
 {
     "name": "maxwilms/bloom-filter",
-    "description": "Bloom filter",
+    "description": "Bloom filter - a space-efficient probabilistic data structure for PHP 5.4+",
     "license": "MIT",
     "require-dev": {
         "phpspec/phpspec": "~2.1"
@@ -11,7 +11,9 @@
             "email": "max@bildschirmflackern.de"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=5.4.36"
+    },
     "autoload": {
         "psr-4": {"maxwilms\\BloomFilter\\": "src/"}
     }
