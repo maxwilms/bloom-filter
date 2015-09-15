@@ -53,17 +53,18 @@ class FeatureContext implements Context, SnippetAcceptingContext
     public function itShouldConfirmIsInSet($item)
     {
         if (!$this->bloomFilter->contains($item)) {
-            throw new Exception("");
+            throw new Exception("$item is not in set!");
         }
     }
 
     /**
-     * @Then it may confirm :item is not in set
+     * @Then it should confirm :item is not in set
      */
-    public function itMayConfirmIsNotInSet($item)
+    public function itShouldConfirmIsNotInSet($item)
     {
-        ; // all fine!
+        if ($this->bloomFilter->contains($item)) {
+            throw new Exception("$item is in set");
+        }
     }
-
 
 }
