@@ -14,4 +14,3 @@ Feature: BloomFilter
     When I insert "foo"
     And I insert "bar"
     Then it may confirm "baz" is not in set
-s
