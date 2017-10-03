@@ -13,8 +13,16 @@ class MultiHash
 
     protected $hashCount;
 
-    public function __construct(Hash $hashOne, Hash $hashTwo)
+    public function __construct(Hash $hashOne = null, Hash $hashTwo = null)
     {
+        if ($hashOne === null) {
+            $hashOne = new JoaatHash();
+        }
+
+        if ($hashTwo === null) {
+            $hashTwo = new FNVHash();   
+        }
+        
         $this->hashOne = $hashOne;
         $this->hashTwo = $hashTwo;
 
