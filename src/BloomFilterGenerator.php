@@ -23,7 +23,7 @@ class BloomFilterGenerator
         $multiHash->setHashCount($hashFunctions);
 
         return new BloomFilter(
-            new BitField($sizeOfBitField),
+            new StringBitField($sizeOfBitField),
             $multiHash
         );
     }

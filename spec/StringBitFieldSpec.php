@@ -5,7 +5,7 @@ namespace spec\maxwilms\BloomFilter;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class BitFieldSpec extends ObjectBehavior
+class StringBitFieldSpec extends ObjectBehavior
 {
 
     function let()
@@ -15,7 +15,7 @@ class BitFieldSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('maxwilms\BloomFilter\BitField');
+        $this->shouldHaveType('maxwilms\BloomFilter\StringBitField');
     }
 
     function it_can_set_a_bit()
