@@ -2,7 +2,7 @@
 
 namespace maxwilms\BloomFilter;
 
-class IntBitField
+class IntBitField implements BitField
 {
     const C = 32; // on 64-bit machines this value can be 64, on 32-bit it needs to be 32.
     protected $length;
