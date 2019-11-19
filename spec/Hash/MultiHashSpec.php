@@ -9,11 +9,6 @@ use Prophecy\Argument;
 class MultiHashSpec extends ObjectBehavior
 {
 
-    function let(Hash $hashOne, Hash $hashTwo)
-    {
-        $this->beConstructedWith($hashOne, $hashTwo);
-    }
-
     function it_returns_an_empty_array_for_one_round()
     {
         $this->setHashCount(0);
@@ -22,6 +17,7 @@ class MultiHashSpec extends ObjectBehavior
 
     function it_generates_one_hash(Hash $hashOne, Hash $hashTwo)
     {
+        $this->beConstructedWith($hashOne, $hashTwo);
         $this->setHashCount(1);
         $hashOne->hash('foobar')->willReturn(1);
         $hashTwo->hash('foobar')->willReturn(2);
@@ -32,6 +28,7 @@ class MultiHashSpec extends ObjectBehavior
 
     function it_generates_two_hash_values(Hash $hashOne, Hash $hashTwo)
     {
+        $this->beConstructedWith($hashOne, $hashTwo);
         $this->setHashCount(2);
         $hashOne->hash('foobar')->willReturn(1);
         $hashTwo->hash('foobar')->willReturn(2);
@@ -41,6 +38,7 @@ class MultiHashSpec extends ObjectBehavior
 
     function it_generates_three_hash_values(Hash $hashOne, Hash $hashTwo)
     {
+        $this->beConstructedWith($hashOne, $hashTwo);
         $this->setHashCount(3);
         $hashOne->hash('foobar')->willReturn(1);
         $hashTwo->hash('foobar')->willReturn(2);
@@ -50,6 +48,7 @@ class MultiHashSpec extends ObjectBehavior
 
     function it_applies_modulo_on_hash(Hash $hashOne, Hash $hashTwo)
     {
+        $this->beConstructedWith($hashOne, $hashTwo);
         $this->setHashCount(1);
         $this->setUpperBound(10);
         $hashOne->hash('foobar')->willReturn(100);

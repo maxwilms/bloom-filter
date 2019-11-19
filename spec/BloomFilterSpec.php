@@ -2,7 +2,7 @@
 
 namespace spec\maxwilms\BloomFilter;
 
-use maxwilms\BloomFilter\BitField;
+use maxwilms\BloomFilter\StringBitField;
 use maxwilms\BloomFilter\Hash\MultiHash;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -10,12 +10,12 @@ use Prophecy\Argument;
 class BloomFilterSpec extends ObjectBehavior
 {
 
-    function let(BitField $bitField, MultiHash $multiHash)
+    function let(StringBitField $bitField, MultiHash $multiHash)
     {
         $this->beConstructedWith($bitField, $multiHash);
     }
 
-    function it_uses_multiHash_to_add_items(BitField $bitField, MultiHash $multiHash)
+    function it_uses_multiHash_to_add_items(StringBitField $bitField, MultiHash $multiHash)
     {
         $multiHash->hash('123')->willReturn([1, 4, 8]);
 
@@ -26,7 +26,7 @@ class BloomFilterSpec extends ObjectBehavior
         $this->add('123');
     }
 
-    function it_confirms_existence_of_valid_items(BitField $bitField, MultiHash $multiHash)
+    function it_confirms_existence_of_valid_items(StringBitField $bitField, MultiHash $multiHash)
     {
         $multiHash->hash('my string')->willReturn([1, 2]);
 
@@ -36,7 +36,7 @@ class BloomFilterSpec extends ObjectBehavior
         $this->contains('my string')->shouldReturn(true);
     }
 
-    function it_denies_existence_of_items_not_in_set(BitField $bitField, MultiHash $multiHash)
+    function it_denies_existence_of_items_not_in_set(StringBitField $bitField, MultiHash $multiHash)
     {
         $multiHash->hash('my string')->willReturn([1, 4]);
 

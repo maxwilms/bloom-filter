@@ -2,8 +2,6 @@
 
 namespace maxwilms\BloomFilter;
 
-use maxwilms\BloomFilter\Hash\DJBX33X;
-use maxwilms\BloomFilter\Hash\FNVHash;
 use maxwilms\BloomFilter\Hash\MultiHash;
 
 class BloomFilterGenerator
@@ -19,13 +17,13 @@ class BloomFilterGenerator
         $sizeOfBitField = (int) ceil(($expectedValues * log($falsePositiveProbability)) / log(1 / (pow(2, log(2)))));
         $hashFunctions = (int) ($sizeOfBitField / $expectedValues * log(2));
 
-        $multiHash = new MultiHash(new DJBX33X(), new FNVHash());
+        $multiHash = new MultiHash();
 
         $multiHash->setUpperBound($sizeOfBitField);
         $multiHash->setHashCount($hashFunctions);
 
         return new BloomFilter(
-            new BitField($sizeOfBitField),
+            new IntBitField($sizeOfBitField),
             $multiHash
         );
     }

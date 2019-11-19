@@ -67,4 +67,14 @@ class FeatureContext implements Context, SnippetAcceptingContext
         }
     }
 
+    /**
+     * @Given /^I serialize and unserialize$/
+     */
+    public function iSerializeAndUnserialize()
+    {
+        $serialized = serialize($this->bloomFilter);
+        $this->bloomFilter = unserialize($serialized);
+    }
+
+
 }

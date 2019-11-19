@@ -2,12 +2,10 @@
 
 namespace maxwilms\BloomFilter\Hash;
 
-class FNVHash implements Hash
+class JoaatHash implements Hash
 {
-
     public function hash($string)
     {
-        return hexdec(hash('fnv132', $string));
+        return hexdec(hash('joaat', $string));
     }
-
 }

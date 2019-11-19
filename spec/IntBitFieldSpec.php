@@ -3,11 +3,9 @@
 namespace spec\maxwilms\BloomFilter;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
-class BitFieldSpec extends ObjectBehavior
+class IntBitFieldSpec extends ObjectBehavior
 {
-
     function let()
     {
         $this->beConstructedWith(100);
@@ -15,7 +13,7 @@ class BitFieldSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('maxwilms\BloomFilter\BitField');
+        $this->shouldHaveType('maxwilms\BloomFilter\IntBitField');
     }
 
     function it_can_set_a_bit()
@@ -28,6 +26,11 @@ class BitFieldSpec extends ObjectBehavior
 
         $this->set(99);
         $this->has(99)->shouldReturn(true);
+
+        for ($i = 0; $i < 99; $i++) {
+            $this->set($i);
+            $this->has($i)->shouldReturn(true);
+        }
     }
 
     function it_stores_zero_bits()
@@ -60,5 +63,4 @@ class BitFieldSpec extends ObjectBehavior
         $this->shouldThrow('InvalidArgumentException')->duringHas(100);
         $this->shouldThrow('InvalidArgumentException')->duringHas(101);
     }
-
 }
